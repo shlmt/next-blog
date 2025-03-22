@@ -1,10 +1,31 @@
 :root {
   --primary-color: #007bff;
   --primary-color-hover: #0056b3;
-
 }
 
-/* PostForm.css */
+body {
+  font-family: 'Arial';
+  margin: 0;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* --- PostForm --- */
 form {
   max-width: 500px;
   margin: 20px auto;
@@ -14,18 +35,18 @@ form {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form .form-group {
+.form-group {
   margin-bottom: 15px;
 }
 
-.form label {
+label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: #333;
 }
 
-form input, form textarea {
+input, textarea {
   width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -34,12 +55,12 @@ form input, form textarea {
   margin-top: 10px;
 }
 
-form textarea {
+textarea {
   height: 120px;
   resize: none;
 }
 
-form input:focus, form textarea:focus {
+input:focus, textarea:focus {
   border-color: var(--primary-color);
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -47,16 +68,62 @@ form input:focus, form textarea:focus {
 
 form button {
   width: 100%;
-  padding: 10px;
-  background-color: var(--primary-color);
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-form button:hover {
-  background-color: var(--primary-color-hover);
+/* --- AppHeader --- */
+header nav {
+  background-color: #2d3748;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  padding-left: -5px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  list-style-type: none;
+}
+
+nav ul li:hover {
+  background-color: #4a5568;
+  color: #fff;
+}
+
+.link {
+  color: #e2e8f0;
+  font-size: medium;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* --- POSTS --- */
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  margin-bottom: 1.5rem;
+}
+
+.posts-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.red-btn {
+  background-color: rgb(199, 38, 38);
+  margin-left: 10px;
+}
+
+.red-btn:hover {
+  background-color: rgb(164, 23, 23);
 }

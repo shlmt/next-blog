@@ -16,7 +16,7 @@ const PostForm=()=>{
                 <label className="form-label">Body</label>
                 <textarea value={body} onChange={(e)=>setBody(e.target.value)} placeholder="Body"/>
             </div>
-            <button>Send</button>
+            <button className="btn">Send</button>
         </form>
     )
 }
