@@ -1,3 +1,4 @@
+import { getPost } from "@/services/posts"
 import Link from "next/link"
 
 interface PostView {
@@ -12,12 +13,18 @@ export const generateMetadata = (props: PostView) => {
     }
 }
 
-const PostViewPage=(props:PostView)=>{
+export const generateStaticParams = () => {
+    return [{postId:'1'}, {postId:'2'}, {postId: '3'}]
+}
+
+const PostViewPage = async (props:PostView)=>{
     const {postId} = props.params
+    const {title, body} = await getPost(postId)
 
     return(
         <>
-        <h1>post {postId}</h1>
+        <h1>post {postId}: {title}</h1>
+        <p>{body}</p>
         <Link href={`/posts/${postId}/edit`} className="btn">Edit</Link>
         <button className='btn red-btn'>Delete</button>
         </>

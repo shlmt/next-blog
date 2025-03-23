@@ -1,13 +1,15 @@
 import PostCard from "@/components/PostCard"
+import { getPosts } from "@/services/posts"
+import Post from "@/types/Post"
 import Link from "next/link"
-
-const POSTS = Array.from({length:30})
 
 export const metadata = {
     title: 'Posts | Next.js',
 }
 
-const PostsPage=()=>{
+const PostsPage = async () => {
+    const posts: Post[] = await getPosts()    
+
     return(
         <>
         <header className="posts-header">
@@ -16,8 +18,8 @@ const PostsPage=()=>{
         </header>
 
         <ul className="grid-posts">
-            {POSTS.map((_,index)=>
-                <PostCard key={index} postId={index.toString()}/>
+            {posts.map(post=>
+                <PostCard key={post.id} {...post}/>
             )}
         </ul>
         </>
