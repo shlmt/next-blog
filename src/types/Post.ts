@@ -1,7 +1,7 @@
 export default interface Post {
-    id: number,
+    id?: string,
     title: string,
     body: string,
-    userId: number,
-    tags: string[]
+    userId?: number,
+    tags?: string[]
 }

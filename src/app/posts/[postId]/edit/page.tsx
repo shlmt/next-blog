@@ -14,7 +14,7 @@ const PostEditPage=(props:PostEdit)=>{
     return(
         <>
         <h1>Edit post {props.params.postId}</h1>
-        <PostForm />
+        <PostForm postId={props.params.postId}/>
         </>
     )
 }
