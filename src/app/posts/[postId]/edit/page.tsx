@@ -6,6 +6,10 @@ interface PostEdit {
     }
 }
 
+export const metadata = {
+    title: 'Edit Post | Next.js',
+}
+
 const PostEditPage=(props:PostEdit)=>{
     return(
         <>

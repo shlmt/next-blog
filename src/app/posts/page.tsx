@@ -3,6 +3,10 @@ import Link from "next/link"
 
 const POSTS = Array.from({length:30})
 
+export const metadata = {
+    title: 'Posts | Next.js',
+}
+
 const PostsPage=()=>{
     return(
         <>

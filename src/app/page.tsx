@@ -1,4 +1,8 @@
 
+export const metadata = {
+    title: 'Home | Next.js',
+}
+
 const HomePage=()=>{
     return(
         <>

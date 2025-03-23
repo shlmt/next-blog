@@ -6,6 +6,12 @@ interface PostView {
     }
 }
 
+export const generateMetadata = (props: PostView) => {
+    return {
+        title: `Post ${props.params.postId} | Next.js`,
+    }
+}
+
 const PostViewPage=(props:PostView)=>{
     const {postId} = props.params
 
