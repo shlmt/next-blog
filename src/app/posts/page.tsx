@@ -12,13 +12,13 @@ const PostsPage = async () => {
 
     return(
         <>
-        <header className="posts-header">
+        <header className='posts-header'>
             <h1>posts</h1>
-            <Link href='/posts/new' className="btn">New Post</Link>
+            <Link href='/posts/new' className='btn'>New Post</Link>
         </header>
 
-        <ul className="grid-posts">
-            {posts.map(post=>
+        <ul className='grid-posts'>
+            {posts?.map(post=>
                 <PostCard key={post.id} {...post}/>
             )}
         </ul>

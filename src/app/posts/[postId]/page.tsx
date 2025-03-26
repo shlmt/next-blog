@@ -1,5 +1,5 @@
+import PostActions from "@/components/PostActions"
 import { getPost } from "@/services/posts"
-import Link from "next/link"
 
 interface PostView {
     params: {
@@ -25,8 +25,7 @@ const PostViewPage = async (props:PostView)=>{
         <>
         <h1>post {postId}: {title}</h1>
         <p>{body}</p>
-        <Link href={`/posts/${postId}/edit`} className="btn">Edit</Link>
-        <button className='btn red-btn'>Delete</button>
+        <PostActions postId={postId}/>
         </>
     )
 }
