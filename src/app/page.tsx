@@ -3,6 +3,8 @@ export const metadata = {
     title: 'Home | Next.js',
 }
 
+export const dynamic = 'force-static'
+
 const HomePage=()=>{
     return(
         <>

@@ -7,6 +7,8 @@ interface PostView {
     }
 }
 
+export const dynamic = 'force-static'
+
 export const generateMetadata = (props: PostView) => {
     return {
         title: `Post ${props.params.postId} | Next.js`,

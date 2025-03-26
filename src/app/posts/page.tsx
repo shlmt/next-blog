@@ -7,6 +7,8 @@ export const metadata = {
     title: 'Posts | Next.js',
 }
 
+export const dynamic = 'force-static'
+
 const PostsPage = async () => {
     const posts: Post[] = await getPosts()    
 

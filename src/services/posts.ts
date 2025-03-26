@@ -22,7 +22,7 @@ export const savePost = async (post: Post) => {
         const response = await fetch('http://localhost:3000/api/posts', {
             method: 'POST',
             headers: {
-                'Context-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(post),
         })

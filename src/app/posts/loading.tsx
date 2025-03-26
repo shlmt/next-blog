@@ -1,4 +1,6 @@
 
+export const dynamic = 'force-static'
+
 const Loading=()=>{
 
     return(

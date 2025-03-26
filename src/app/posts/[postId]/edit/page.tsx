@@ -10,6 +10,8 @@ export const metadata = {
     title: 'Edit Post | Next.js',
 }
 
+export const dynamic = 'force-static'
+
 const PostEditPage=(props:PostEdit)=>{
     return(
         <>

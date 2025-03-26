@@ -4,6 +4,8 @@ export const metadata = {
     title: 'New Post | Next.js',
 }
 
+export const dynamic = 'force-static'
+
 const NewPostPage=()=>{
     return(
         <>
