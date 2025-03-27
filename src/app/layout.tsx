@@ -1,5 +1,8 @@
 import '@/app/globals.css'
 import AppHeader from '@/components/AppHeader'
+import SessionProvider from '@/components/SessionProvider'
+import { getServerSession } from 'next-auth'
+import { authOptions } from './api/auth/[...nextauth]/route'
 
 export const metadata = {
   title: 'Blog | Next.js',
@@ -14,11 +17,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const session = getServerSession(authOptions)
   return (
     <html lang="en">
       <body>
-        <AppHeader />
-        {children}
+        <SessionProvider session={session}>
+          <AppHeader />
+          {children}
+        </SessionProvider>
       </body>
     </html>
   )
