@@ -1,6 +1,7 @@
 'use client'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import RestrictedContent from './RestrictedContent'
 
 const AppHeaderUser = () => {
 	const { data: session } = useSession()
@@ -9,15 +10,17 @@ const AppHeaderUser = () => {
 		<>
 			<div className='user-details'>
 				hello, {session?.user?.name ?? 'user'}
-				{session ? (
+				<RestrictedContent
+					fallback={
+						<Link href='/signIn' className='btn'>
+							Sign In
+						</Link>
+					}
+				>
 					<button className='btn red-btn' onClick={() => signOut()}>
 						Sign Out
 					</button>
-				) : (
-					<Link href='/signIn' className='btn'>
-						Sign In
-					</Link>
-				)}
+				</RestrictedContent>
 			</div>
 		</>
 	)

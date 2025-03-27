@@ -1,4 +1,5 @@
 import PostActions from "@/components/PostActions"
+import RestrictedContent from "@/components/RestrictedContent"
 import { getPost } from "@/services/posts"
 
 interface PostView {
@@ -25,7 +26,9 @@ const PostViewPage = async (props:PostView)=>{
         <>
         <h1>post {postId}: {title}</h1>
         <p>{body}</p>
-        <PostActions postId={postId}/>
+        <RestrictedContent>
+            <PostActions postId={postId}/>
+        </RestrictedContent>
         </>
     )
 }

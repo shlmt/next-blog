@@ -4,7 +4,7 @@ export const getPosts = async () => {
 	const res = await fetch('http://localhost:3000/api/posts', {
 		next: { revalidate: 3 }
 	})
-	if(res.status == 200){
+	if (res.status == 200) {
 		const data = await res.json()
 		return data.posts
 	}
@@ -15,11 +15,11 @@ export const getPost = async (postId: string) => {
 	const res = await fetch(`http://localhost:3000/api/posts/${postId}`, {
 		next: { revalidate: 3 }
 	})
-	if(res.status == 200){
+	if (res.status == 200) {
 		const data = await res.json()
 		return data
 	}
-	return {}
+	return
 }
 
 export const savePost = async (post: Post) => {
@@ -32,7 +32,10 @@ export const savePost = async (post: Post) => {
 			},
 			body: JSON.stringify(post)
 		})
-		if (!response.ok) alert('Network response was not ok')
+		if (!response.ok) {
+			alert('Network response was not ok')
+			return
+		}
 		return response.json()
 	} catch (e) {
 		console.error(e)
@@ -43,7 +46,10 @@ export const savePost = async (post: Post) => {
 export const deletePost = async (postId: string) => {
 	try {
 		const response = await fetch(`http://localhost:3000/api/posts/${postId}`, { method: 'DELETE' })
-		if (!response.ok) alert('error in delete')
+		if (!response.ok) {
+			alert('error in delete')
+			return
+		}
 		return response.json()
 	} catch (e) {
 		console.error(e)

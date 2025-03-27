@@ -12,12 +12,12 @@ export const metadata = {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const session = getServerSession(authOptions)
+  const session = await getServerSession(authOptions)
   return (
     <html lang="en">
       <body>
